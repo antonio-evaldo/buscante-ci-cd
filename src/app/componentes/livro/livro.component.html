@@ -13,8 +13,10 @@
     <button (click)="onModalChange(true)" aria-label="Mais detalhes sobre o livro">Mais detalhes</button>
   </section>
 </article>
-<ng-container *ngIf="modalAberto">
-  <app-modal [livro]="livro" (mudouModal)="onModalChange($event)"></app-modal>
-</ng-container>
+@if (modalAberto) {
+  <ng-container>
+    <app-modal [livro]="livro" (mudouModal)="onModalChange($event)"></app-modal>
+  </ng-container>
+}
 
 

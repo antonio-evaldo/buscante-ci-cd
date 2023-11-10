@@ -6,7 +6,7 @@ import { EMPTY, catchError, debounceTime, distinctUntilChanged, filter, map, swi
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
-import { LivrosResultado, Item } from '../../models/interfaces';
+import { LivrosResultado, Item, Livro } from '../../models/interfaces';
 import { LivroVolumeInfo } from '../../models/livroVolumeInfo';
 import { LivroService } from '../../service/livro.service';
 import { LivroComponent } from '../../componentes/livro/livro.component';
@@ -17,7 +17,12 @@ const PAUSA = 300;
 @Component({
   selector: 'app-lista-livros',
   standalone: true,
-  imports: [HttpClientModule, CommonModule, LivroComponent, ReactiveFormsModule],
+  imports: [
+    HttpClientModule,
+    CommonModule,
+    LivroComponent,
+    ReactiveFormsModule
+  ],
   templateUrl: './lista-livros.component.html',
   styleUrl: './lista-livros.component.css'
 })
@@ -25,6 +30,7 @@ export class ListaLivrosComponent {
   campoBusca = new FormControl();
   mensagemErro = ''
   livrosResultado!: LivrosResultado;
+  listaLivros: Livro[] = [];
 
   constructor(
     private service: LivroService,
@@ -44,6 +50,7 @@ export class ListaLivrosComponent {
     }),
     tap((resultado) => {
       this.livrosResultado = resultado;
+      console.log(this.livrosResultado);
       const mensagemLiveAnnouncer = `${this.livrosResultado.totalItems} resultados encontrados`;
       this.anunciarResultadosEncontrados(mensagemLiveAnnouncer);
     }),

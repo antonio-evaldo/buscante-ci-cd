@@ -22,11 +22,12 @@
           placeholder="Digite seu nome completo"
           formControlName="nome"
           required>
-        <span
-          id="nome-erro"
-          *ngIf="contatoForm.get('nome')?.errors?.['required']"
-          class="erro-mensagem">Nome obrigatório
-        </span>
+        @if (contatoForm.get(nome)?.errors?.[required]) {
+          <span
+            id="nome-erro"
+            class="erro-mensagem">Nome obrigatório
+          </span>
+        }
       </div>
 
       <div class="campo-form">
@@ -39,16 +40,18 @@
           placeholder="Digite seu email"
           formControlName="email"
           required>
-        <span
-          id="email-erro-required"
-          *ngIf="contatoForm.get('email')?.errors?.['required']"
-          class="erro-mensagem">E-mail obrigatório
-        </span>
-        <span
-          id="email-erro-email"
-          *ngIf="contatoForm.get('email')?.errors?.['email']"
-          class="erro-mensagem">Formato de e-mail inválido
-        </span>
+        @if (contatoForm.get(email)?.errors?.[required]) {
+          <span
+            id="email-erro-required"
+            class="erro-mensagem">E-mail obrigatório
+          </span>
+        }
+        @if (contatoForm.get(email)?.errors?.[required]) {
+          <span
+            id="email-erro-email"
+            class="erro-mensagem">Formato de e-mail inválido
+          </span>
+        }
       </div>
 
       <div class="campo-form">
@@ -123,11 +126,12 @@
           placeholder="Digite sua mensagem"
           formControlName="mensagem"
           required></textarea>
-        <span
-          id="mensagem-erro"
-          *ngIf="contatoForm.get('mensagem')?.errors?.['required']"
-          class="erro-mensagem">Mensagem obrigatória
-        </span>
+        @if (contatoForm.get(mensagem)?.errors?.[required]) {
+          <span
+            id="mensagem-erro"
+            class="erro-mensagem">Mensagem obrigatória
+          </span>
+        }
       </div>
     </fieldset>
 
