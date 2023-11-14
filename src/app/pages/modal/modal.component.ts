@@ -51,4 +51,8 @@ export class ModalComponent {
   lerPrevia() {
     window.open(this.livro.previewLink, '_blank');
   }
+
+  get thumbnailUrl() {
+    return this.livro.thumbnail || 'assets/imagens/capa-indisponivel.png';
+  }
 }

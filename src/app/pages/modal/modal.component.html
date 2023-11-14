@@ -1,9 +1,11 @@
 @if (statusModal) {
-  <section cdkTrapFocus cdkTrapFocusAutoCapture="true" class="container {{ esconderScroll() }}">
+  <section *ngIf="statusModal" cdkTrapFocus cdkTrapFocusAutoCapture="true" class="container {{ esconderScroll() }}">
     <article class="card" role="dialog" aria-modal="true">
-      <img class="imagem" src="{{ livro.thumbnail != undefined ? livro.thumbnail
-        : 'assets/imagens/capa-indisponivel.png'
-      }}" alt="Capa do livro">
+      <img
+        class="imagem"
+        [src]="thumbnailUrl"
+        alt="Capa do livro: {{ livro.title }}"
+      >
       <section class="info-card">
         <h2 class="titulo">{{ livro.title }}</h2>
         <p class="informacoes">Autoria:</p>
@@ -13,16 +15,13 @@
         <p class="informacoes">Editora:</p>
         <p class="resultado">{{ livro.publisher }}</p>
         <div class="botoes">
-          <button (click)="lerPrevia()" class="detalhes">Ler prévia</button>
-          <button class="detalhes">Comprar livro</button>
+          <button (click)="lerPrevia()" [attr.aria-label]="'Ler prévia do livro ' + livro.title" class="detalhes">Ler prévia</button>
+          <button [attr.aria-label]="'Comprar livro: ' + livro.title" class="detalhes">Comprar livro</button>
         </div>
       </section>
-        <button
-          aria-label="Fechar"
-          (click)="fecharModal()"
-          class="botao-fechar">
-          <span class="material-symbols-outlined">close</span>
-        </button>
+      <button aria-label="Fechar" (click)="fecharModal()" class="botao-fechar">
+        <span class="material-symbols-outlined">close</span>
+      </button>
       <section class="sinopse">
         <h3 class="informacoes">Sinopse</h3>
         <p class="resultado">{{ livro.description | slice:0:1000 }}</p>
