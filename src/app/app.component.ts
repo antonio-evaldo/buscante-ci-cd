@@ -2,7 +2,7 @@ import { RodapeComponent } from './componentes/rodape/rodape.component';
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { LivroService } from './service/livro.service';
@@ -15,6 +15,8 @@ import { ContatoComponent } from './pages/contato/contato.component';
   imports: [
     CommonModule,
     RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
     HttpClientModule,
     CabecalhoComponent,
     RodapeComponent,

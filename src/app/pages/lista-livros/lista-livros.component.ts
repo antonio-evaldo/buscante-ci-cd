@@ -1,11 +1,11 @@
 import { HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EMPTY, catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap, throwError } from 'rxjs';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
-import { LivrosResultado, Item, Livro } from '../../models/interfaces';
+import { LivrosResultado, Item } from '../../models/interfaces';
 import { LivroVolumeInfo } from '../../models/livroVolumeInfo';
 import { LivroService } from '../../service/livro.service';
 import { LivroComponent } from '../../componentes/livro/livro.component';
@@ -29,11 +29,19 @@ export class ListaLivrosComponent {
   campoBusca = new FormControl();
   mensagemErro = ''
   livrosResultado!: LivrosResultado;
+  @ViewChild('campoBuscaElement', { read: ElementRef }) campoBuscaElement!: ElementRef;
 
   constructor(
     private service: LivroService,
-    private liveAnnouncer: LiveAnnouncer
+    private liveAnnouncer: LiveAnnouncer,
+    private renderer: Renderer2
   ) { }
+
+  ngAfterViewInit(): void {
+    if (this.campoBuscaElement) {
+      this.renderer.selectRootElement(this.campoBuscaElement.nativeElement).focus();
+    }
+  }
 
   livrosEncontrados$ = this.campoBusca.valueChanges.pipe(
     debounceTime(PAUSA),
