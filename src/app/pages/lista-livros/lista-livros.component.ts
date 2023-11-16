@@ -29,7 +29,6 @@ export class ListaLivrosComponent {
   campoBusca = new FormControl();
   mensagemErro = ''
   livrosResultado!: LivrosResultado;
-  listaLivros: Livro[] = [];
 
   constructor(
     private service: LivroService,
@@ -49,7 +48,6 @@ export class ListaLivrosComponent {
     }),
     tap((resultado) => {
       this.livrosResultado = resultado;
-      console.log(this.livrosResultado);
       const mensagemLiveAnnouncer = `${this.livrosResultado.totalItems} resultados encontrados`;
       this.anunciarResultadosEncontrados(mensagemLiveAnnouncer);
     }),

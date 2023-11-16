@@ -1,3 +1,15 @@
+.input-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.lupa {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
 .container {
   display: flex;
   justify-content: center;

@@ -1,16 +1,14 @@
 <section class="container">
   <form class="busca">
     <label for="campoBusca">Que livro você procura?</label>
-    <div>
+    <div class="input-wrapper">
       <input
         type="search"
         id="campoBusca"
         [formControl]="campoBusca"
         aria-label="Campo de busca"
-      >
-      <button aria-hidden="true">
-        <img src="assets/imagens/icone-busca.png" alt="">
-      </button>
+        >
+        <img class="lupa" src="assets/imagens/icone-busca.png" alt="Lupa roxa">
     </div>
   </form>
   <p>Busque por assunto, autoria, nome...</p>
