@@ -4,7 +4,7 @@
     <h2 [attr.aria-label]="'Título do livro: ' + livro.title">{{ livro.title | slice:0:30 }}</h2>
     <dl>
       <dt class="informacoes">Autoria:</dt>
-      <!-- <dd class="resultado">{{ livro.authors | autoria | slice:0:20 }}</dd> -->
+      <dd class="resultado">{{ livro.authors | autoria | slice:0:20 }}</dd>
       <dt class="informacoes">Data de publicação:</dt>
       <dd class="resultado">{{ livro.publishedDate | date:'dd/MM/yyyy' }}</dd>
       <dt class="informacoes">Editora:</dt>
