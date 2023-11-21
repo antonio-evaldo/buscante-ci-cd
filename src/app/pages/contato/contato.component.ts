@@ -34,7 +34,7 @@ export class ContatoComponent {
   }
 
   ngAfterViewInit() {
-    this.focoNoPrimeiroElemento();
+    this.primeiroElemento.nativeElement.focus();
   }
 
   onSubmit() {
@@ -47,10 +47,6 @@ export class ContatoComponent {
   cancelar() {
     this.contatoForm.reset();
     this.router.navigateByUrl('/');
-  }
-
-  focoNoPrimeiroElemento(): void {
-    this.primeiroElemento.nativeElement.focus();
   }
 
 }
