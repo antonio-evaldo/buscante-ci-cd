@@ -3,12 +3,9 @@
     <label for="campoBusca">Que livro você procura?</label>
     <div class="input-wrapper">
       <input
-        #campoBuscaElement
         type="search"
         id="campoBusca"
-        [formControl]="campoBusca"
-        aria-label="Campo de busca"
-        >
+        [formControl]="campoBusca"        >
         <img class="lupa" src="assets/imagens/icone-busca.png" alt="Lupa roxa">
     </div>
   </form>
@@ -16,20 +13,17 @@
   @if (mensagemErro) {
     <section
       role="alert"
-      class="resultados mensagem-erro"
-      aria-label="Mensagem de erro">
+      class="resultados mensagem-erro">
         {{ mensagemErro }}
     </section>
   }
   @if (livrosEncontrados$ | async; as listaLivros) {
     <section
-      class="resultados"
-      aria-label="Resultados da busca">
+      class="resultados">
         {{ livrosResultado.totalItems }} resultados encontrados
     </section>
     <ul
-      class="container-card"
-      aria-label="Lista de livros encontrados">
+      class="container-card">
       @for (livro of listaLivros; track livro.title) {
         <li>
           <app-livro [livro]="livro"></app-livro>
@@ -38,8 +32,7 @@
     </ul>
   } @else {
     <section
-      class="imagens"
-      aria-label="Página inicial">
+      class="imagens">
       <h1 class="titulo">Busque o livro <br> que quiser na <br> nossa estante!</h1>
       <img
         class="ilustracao"

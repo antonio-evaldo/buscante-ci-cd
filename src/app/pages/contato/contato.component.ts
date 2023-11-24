@@ -1,9 +1,7 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LiveAnnouncer } from '@angular/cdk/a11y';
-
 
 @Component({
   selector: 'app-contato',
@@ -14,12 +12,10 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 })
 export class ContatoComponent {
   contatoForm!: FormGroup;
-  @ViewChild('primeiroElemento') primeiroElemento!: ElementRef;
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router,
-    private liveAnnouncer: LiveAnnouncer
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -33,13 +29,8 @@ export class ContatoComponent {
     });
   }
 
-  ngAfterViewInit() {
-    this.primeiroElemento.nativeElement.focus();
-  }
-
   onSubmit() {
     if(this.contatoForm.valid) {
-      this.liveAnnouncer.announce('Formulário enviado com sucesso');
       this.contatoForm.reset();
     }
   }

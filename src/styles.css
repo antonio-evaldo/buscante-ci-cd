@@ -37,3 +37,6 @@ button:hover {
 }
 
 
+body {
+  overflow-x: hidden;
+}

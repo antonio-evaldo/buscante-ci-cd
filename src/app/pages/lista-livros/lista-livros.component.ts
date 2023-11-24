@@ -1,8 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
-import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EMPTY, catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap, throwError } from 'rxjs';
-import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 import { LivrosResultado, Item } from '../../models/interfaces';
@@ -29,19 +28,8 @@ export class ListaLivrosComponent {
   campoBusca = new FormControl();
   mensagemErro = ''
   livrosResultado!: LivrosResultado;
-  @ViewChild('campoBuscaElement', { read: ElementRef }) campoBuscaElement!: ElementRef;
 
-  constructor(
-    private service: LivroService,
-    private liveAnnouncer: LiveAnnouncer,
-    private renderer: Renderer2
-  ) { }
-
-  ngAfterViewInit(): void {
-    if (this.campoBuscaElement) {
-      this.renderer.selectRootElement(this.campoBuscaElement.nativeElement).focus();
-    }
-  }
+  constructor(private service: LivroService) { }
 
   livrosEncontrados$ = this.campoBusca.valueChanges.pipe(
     debounceTime(PAUSA),
@@ -56,8 +44,6 @@ export class ListaLivrosComponent {
     }),
     tap((resultado) => {
       this.livrosResultado = resultado;
-      const mensagemLiveAnnouncer = `${this.livrosResultado.totalItems} resultados encontrados`;
-      this.anunciarResultadosEncontrados(mensagemLiveAnnouncer);
     }),
     map((resultado) => resultado.items ?? []),
     map((items) => this.livrosResultadoParaLivros(items)),
@@ -71,9 +57,5 @@ export class ListaLivrosComponent {
     return items.map(item => {
       return new LivroVolumeInfo(item)
     })
-  }
-
-  anunciarResultadosEncontrados(mensagem: string): void {
-    this.liveAnnouncer.announce(mensagem);
   }
 }
