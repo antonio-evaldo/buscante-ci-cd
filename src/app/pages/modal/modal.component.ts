@@ -42,12 +42,6 @@ export class ModalComponent {
     this.renderer.setStyle(this.el.nativeElement.ownerDocument.body, 'overflow', 'scroll');
   }
 
-  esconderScroll(){
-    if(this.statusModal == true ) {
-    this.renderer.setStyle(this.el.nativeElement.ownerDocument.body, 'overflow', 'hidden');
-    }
-  }
-
   lerPrevia() {
     window.open(this.livro.previewLink, '_blank');
   }
