@@ -166,6 +166,10 @@ input::placeholder, textarea::placeholder{
   border: 1px solid red;
 }
 
-
+.contato-botoes .botao-enviar[aria-disabled] {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
 
 
