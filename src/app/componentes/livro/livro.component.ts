@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ElementRef } from '@angular/core';
 
 import { Livro } from '../../models/interfaces';
 import { AutoriaPipe } from '../../pipes/autoria.pipe';
@@ -17,9 +18,14 @@ export class LivroComponent {
   @Input() livro!: Livro;
   modalAberto: boolean = false;
 
-  constructor() {}
+  constructor(
+    private renderer: Renderer2,
+    private element: ElementRef
+  ) {}
 
   onModalChange(evento: boolean) {
     this.modalAberto = evento;
+    this.renderer.setStyle(
+      this.element.nativeElement.ownerDocument.body, 'overflow', 'hidden')
   }
 }
