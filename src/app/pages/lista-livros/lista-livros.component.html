@@ -1,5 +1,5 @@
 <section class="container">
-  <form class="busca">
+  <form (submit)="$event.preventDefault()" class="busca">
     <label for="campoBusca">Que livro você procura?</label>
     <div class="input-wrapper">
       <input
