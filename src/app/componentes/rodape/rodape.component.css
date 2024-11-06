@@ -1,14 +1,14 @@
 footer {
-  background-color: #050C42;
+  background-color: #050c42;
   height: 83px;
   width: 100%;
   bottom: 0;
   position: absolute;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
@@ -17,6 +17,3 @@ span {
   margin-top: 0.75rem;
   font-size: 36px;
 }
-
-
-

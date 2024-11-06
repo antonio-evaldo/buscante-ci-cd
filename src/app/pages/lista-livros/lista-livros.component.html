@@ -7,8 +7,9 @@
         #campoBuscaElement
         type="search"
         id="campoBusca"
-        [formControl]="campoBusca"        >
-        <img class="lupa" src="assets/imagens/icone-busca.png" alt="Lupa roxa">
+        [formControl]="campoBusca"
+      />
+      <img class="lupa" src="assets/imagens/icone-busca.png" alt="Lupa roxa" />
     </div>
   </form>
   <p>Busque por assunto, autoria, nome...</p>
@@ -16,19 +17,16 @@
     <section
       role="alert"
       aria-label="Mensagem de erro"
-      class="resultados mensagem-erro">
-        {{ mensagemErro }}
+      class="resultados mensagem-erro"
+    >
+      {{ mensagemErro }}
     </section>
   }
   @if (livrosEncontrados$ | async; as listaLivros) {
-    <section
-      aria-label="Resultados da busca"
-      class="resultados">
-        {{ livrosResultado.totalItems }} resultados encontrados
+    <section aria-label="Resultados da busca" class="resultados">
+      {{ livrosResultado.totalItems }} resultados encontrados
     </section>
-    <ul
-      aria-label="Lista de livros encontrados"
-      class="container-card">
+    <ul aria-label="Lista de livros encontrados" class="container-card">
       @for (livro of listaLivros; track livro.title) {
         <li>
           <app-livro [livro]="livro"></app-livro>
@@ -36,14 +34,17 @@
       }
     </ul>
   } @else {
-    <section
-      aria-label="Página inicial"
-      class="imagens">
-      <h1 class="titulo">Busque o livro <br> que quiser na <br> nossa estante!</h1>
+    <section aria-label="Página inicial" class="imagens">
+      <h1 class="titulo">
+        Busque o livro <br />
+        que quiser na <br />
+        nossa estante!
+      </h1>
       <img
         class="ilustracao"
         src="assets/imagens/ilustracao-estante.png"
-        alt="Ilustração de uma pessoa em pé ao lado de uma estante com livros e plantas">
+        alt="Ilustração de uma pessoa em pé ao lado de uma estante com livros e plantas"
+      />
     </section>
   }
 </section>

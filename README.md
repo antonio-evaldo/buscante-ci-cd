@@ -2,7 +2,7 @@
 
 # Buscante
 
-Aplicação que permite pesquisar e descobrir livros utilizando a API do Google Books. 
+Aplicação que permite pesquisar e descobrir livros utilizando a API do Google Books.
 
 ## 🔨 Funcionalidades do projeto
 
@@ -32,9 +32,9 @@ Você pode [acessar o código fonte do projeto inicial](https://github.com/nayan
 
 ## 🛠️ Abrir e rodar o projeto
 
-Para abrir e rodar o projeto, execute *npm i* para instalar as dependências e *ng serve* para iniciar o projeto.
+Para abrir e rodar o projeto, execute _npm i_ para instalar as dependências e _ng serve_ para iniciar o projeto.
 
-Depois, acesse [http://localhost:4200/](url) no seu navegador. 
+Depois, acesse [http://localhost:4200/](url) no seu navegador.
 
 ## 📚 Mais informações do curso
 

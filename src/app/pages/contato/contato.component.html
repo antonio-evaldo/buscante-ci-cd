@@ -2,10 +2,10 @@
   <section class="cabecalho-contato">
     <div class="cabecalho-contato-texto">
       <h2>Entre em Contato</h2>
-      <p>Alguma dúvida, crítica ou sugestão? <br>Entre em contato!</p>
+      <p>Alguma dúvida, crítica ou sugestão? <br />Entre em contato!</p>
     </div>
     <figure>
-      <img src="assets/imagens/contato.png" alt="">
+      <img src="assets/imagens/contato.png" alt="" />
     </figure>
   </section>
 
@@ -20,12 +20,10 @@
           id="nome"
           placeholder="Digite seu nome completo"
           formControlName="nome"
-          required>
-        @if (contatoForm.get('nome')?.errors?.['required']) {
-          <span
-            id="nome-erro"
-            class="erro-mensagem">Nome obrigatório
-          </span>
+          required
+        />
+        @if (contatoForm.get("nome")?.errors?.["required"]) {
+          <span id="nome-erro" class="erro-mensagem">Nome obrigatório </span>
         }
       </div>
 
@@ -39,19 +37,18 @@
           id="email"
           placeholder="Digite seu email"
           formControlName="email"
-          required>
-          @if (contatoForm.get('email')?.errors?.['email']) {
-            <span
-              id="email-erro-email"
-              class="erro-mensagem">Formato de e-mail inválido
-            </span>
-          }
-          @if (contatoForm.get('email')?.errors?.['required']) {
-            <span
-              id="email-erro-required"
-              class="erro-mensagem">E-mail obrigatório
-            </span>
-          }
+          required
+        />
+        @if (contatoForm.get("email")?.errors?.["email"]) {
+          <span id="email-erro-email" class="erro-mensagem"
+            >Formato de e-mail inválido
+          </span>
+        }
+        @if (contatoForm.get("email")?.errors?.["required"]) {
+          <span id="email-erro-required" class="erro-mensagem"
+            >E-mail obrigatório
+          </span>
+        }
       </div>
 
       <div class="campo-form">
@@ -60,16 +57,15 @@
           type="tel"
           id="telefone"
           placeholder="(XX) XXXX-XXXX"
-          formControlName="telefone">
+          formControlName="telefone"
+        />
       </div>
     </fieldset>
 
     <fieldset>
       <div class="campo-form">
         <label for="motivoContato">Qual o motivo do contato?</label>
-        <select
-          id="motivoContato"
-          formControlName="motivoContato">
+        <select id="motivoContato" formControlName="motivoContato">
           <option value="" disabled selected>Selecione a melhor opção</option>
           <option value="suporte">Suporte</option>
           <option value="sugestoes">Sugestões</option>
@@ -79,10 +75,10 @@
     </fieldset>
 
     <fieldset>
-      <label for="melhorFormaContato">Qual a melhor forma de retorno do seu contato?</label>
-      <div
-        role="radiogroup"
-        class="campo-form">
+      <label for="melhorFormaContato"
+        >Qual a melhor forma de retorno do seu contato?</label
+      >
+      <div role="radiogroup" class="campo-form">
         <ul class="radio-button">
           <li>
             <label for="email">
@@ -90,7 +86,8 @@
                 type="radio"
                 id="email-contato"
                 formControlName="melhorFormaContato"
-                value="email">E-mail
+                value="email"
+              />E-mail
             </label>
           </li>
           <li>
@@ -99,7 +96,8 @@
                 type="radio"
                 id="telefone-contato"
                 formControlName="melhorFormaContato"
-                value="telefone">Ligação
+                value="telefone"
+              />Ligação
             </label>
           </li>
           <li>
@@ -108,7 +106,8 @@
                 type="radio"
                 id="whatsapp"
                 formControlName="melhorFormaContato"
-                value="whatsapp">Whatsapp
+                value="whatsapp"
+              />Whatsapp
             </label>
           </li>
         </ul>
@@ -124,28 +123,27 @@
           [attr.aria-invalid]="contatoForm.get('mensagem')?.invalid"
           placeholder="Digite sua mensagem"
           formControlName="mensagem"
-          required></textarea>
-        @if (contatoForm.get('mensagem')?.errors?.['required']) {
-          <span
-            id="mensagem-erro"
-            class="erro-mensagem">Mensagem obrigatória
+          required
+        ></textarea>
+        @if (contatoForm.get("mensagem")?.errors?.["required"]) {
+          <span id="mensagem-erro" class="erro-mensagem"
+            >Mensagem obrigatória
           </span>
         }
       </div>
     </fieldset>
 
     <div class="contato-botoes">
-      <button
-        type="button"
-        class="botao-cancelar"
-        (click)="cancelar()">Cancelar
+      <button type="button" class="botao-cancelar" (click)="cancelar()">
+        Cancelar
       </button>
       <button
         type="submit"
         [attr.aria-disabled]="contatoForm.invalid"
-        class="botao-enviar">Enviar
+        class="botao-enviar"
+      >
+        Enviar
       </button>
     </div>
   </form>
 </div>
-

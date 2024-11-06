@@ -21,10 +21,11 @@ import { ContatoComponent } from './pages/contato/contato.component';
     CabecalhoComponent,
     RodapeComponent,
     SobreComponent,
-    ContatoComponent],
+    ContatoComponent,
+  ],
   providers: [LivroService],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'a11y-buscante';

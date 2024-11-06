@@ -6,8 +6,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './sobre.component.html',
-  styleUrl: './sobre.component.css'
+  styleUrl: './sobre.component.css',
 })
-export class SobreComponent {
-
-}
+export class SobreComponent {}

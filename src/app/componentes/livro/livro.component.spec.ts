@@ -8,10 +8,9 @@ describe('LivroComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LivroComponent]
-    })
-    .compileComponents();
-    
+      imports: [LivroComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(LivroComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

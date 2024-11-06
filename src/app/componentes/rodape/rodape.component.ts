@@ -6,8 +6,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './rodape.component.html',
-  styleUrl: './rodape.component.css'
+  styleUrl: './rodape.component.css',
 })
-export class RodapeComponent {
-
-}
+export class RodapeComponent {}

@@ -37,10 +37,10 @@ export interface ImageLinks {
 }
 
 export interface Item {
-  volumeInfo: VolumeInfo
+  volumeInfo: VolumeInfo;
 }
 
 export interface LivrosResultado {
   items: Item[];
-  totalItems: number
+  totalItems: number;
 }

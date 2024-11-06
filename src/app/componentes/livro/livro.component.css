@@ -16,7 +16,7 @@ img {
   padding-bottom: 7px;
   padding-left: 14px;
   padding-right: 6px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 0px 8px 8px 0px;
   display: flex;
   flex-direction: column;
@@ -26,30 +26,30 @@ img {
 }
 
 h2 {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
   line-height: 30px;
-  color: #6C63FF;
+  color: #6c63ff;
 }
 
 .informacoes {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  color: #8B8B8B;
+  color: #8b8b8b;
 }
 
 .resultado {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #8B8B8B;
+  color: #8b8b8b;
 }
 
 dd {
@@ -61,26 +61,20 @@ dt {
 }
 
 button {
-  background: #6C63FF;
+  background: #6c63ff;
   width: 156px;
   height: 40px;
   border-radius: 8px;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  color: #FFFFFF;
+  color: #ffffff;
   border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background: #050C42;
+  background: #050c42;
 }
-
-
-
-
-
-

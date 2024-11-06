@@ -8,25 +8,25 @@ export const routes: Routes = [
   {
     path: 'lista-livros',
     component: ListaLivrosComponent,
-    title: 'Busque um livro - Buscante'
+    title: 'Busque um livro - Buscante',
   },
   {
     path: 'sobre',
     component: SobreComponent,
-    title: 'Mais informações - Buscante'
+    title: 'Mais informações - Buscante',
   },
   {
     path: 'contato',
     component: ContatoComponent,
-    title: 'Entre em contato - Buscante'
+    title: 'Entre em contato - Buscante',
   },
   {
     path: '',
     redirectTo: 'lista-livros',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: '**',
-    component: ListaLivrosComponent
-  }
+    component: ListaLivrosComponent,
+  },
 ];

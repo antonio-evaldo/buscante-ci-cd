@@ -11,21 +11,23 @@ import { ModalComponent } from '../../pages/modal/modal.component';
   standalone: true,
   imports: [CommonModule, AutoriaPipe, ModalComponent],
   templateUrl: './livro.component.html',
-  styleUrl: './livro.component.css'
+  styleUrl: './livro.component.css',
 })
 export class LivroComponent {
-
   @Input() livro!: Livro;
   modalAberto: boolean = false;
 
   constructor(
     private renderer: Renderer2,
-    private element: ElementRef
+    private element: ElementRef,
   ) {}
 
   onModalChange(evento: boolean) {
     this.modalAberto = evento;
     this.renderer.setStyle(
-      this.element.nativeElement.ownerDocument.body, 'overflow', 'hidden')
+      this.element.nativeElement.ownerDocument.body,
+      'overflow',
+      'hidden',
+    );
   }
 }

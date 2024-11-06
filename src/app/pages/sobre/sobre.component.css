@@ -2,7 +2,7 @@
   display: flex;
   max-width: 75%;
   margin: 60px auto;
-  background: #EFF2F1;
+  background: #eff2f1;
   padding: 32px;
   gap: 24px;
 
@@ -10,7 +10,7 @@
 }
 
 .sobre-cabecalho h2 {
-  color: #050C42;
+  color: #050c42;
   font-size: 24px;
   font-weight: 600;
   line-height: 36px;
@@ -26,7 +26,7 @@
   line-height: 24px;
   letter-spacing: 0em;
   text-align: left;
-  color: #8B8B8B;
+  color: #8b8b8b;
 }
 
 .sobre-download {
@@ -45,7 +45,7 @@
   line-height: 24px;
   letter-spacing: 0em;
   text-align: center;
-  color: #8B8B8B;
+  color: #8b8b8b;
   padding-right: 24px;
 }
 
@@ -70,5 +70,5 @@
   line-height: 36px;
   letter-spacing: 0em;
   text-align: center;
-  color: #050C42;
+  color: #050c42;
 }

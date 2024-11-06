@@ -15,31 +15,34 @@ import { Livro } from '../../models/interfaces';
 @Component({
   selector: 'app-modal',
   standalone: true,
-  imports: [CommonModule, A11yModule ],
+  imports: [CommonModule, A11yModule],
   templateUrl: './modal.component.html',
-  styleUrl: './modal.component.css'
+  styleUrl: './modal.component.css',
 })
 export class ModalComponent {
   @Input() livro!: Livro;
   statusModal: boolean = true;
-  @Output() mudouModal = new EventEmitter<boolean>()
+  @Output() mudouModal = new EventEmitter<boolean>();
 
   constructor(
     private renderer: Renderer2,
-    private element: ElementRef
+    private element: ElementRef,
   ) {}
 
   @HostListener('document:keydown.escape') fecharModalAoPressionarEsc() {
-    if(this.statusModal) {
-      this.fecharModal()
+    if (this.statusModal) {
+      this.fecharModal();
     }
   }
 
   fecharModal() {
-    this.statusModal = false
-    this.mudouModal.emit(this.statusModal)
+    this.statusModal = false;
+    this.mudouModal.emit(this.statusModal);
     this.renderer.setStyle(
-      this.element.nativeElement.ownerDocument.body, 'overflow', 'scroll')
+      this.element.nativeElement.ownerDocument.body,
+      'overflow',
+      'scroll',
+    );
   }
 
   lerPrevia() {

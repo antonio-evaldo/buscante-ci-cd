@@ -7,8 +7,6 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterLink, RouterOutlet, RouterLinkActive],
   templateUrl: './cabecalho.component.html',
-  styleUrl: './cabecalho.component.css'
+  styleUrl: './cabecalho.component.css',
 })
-export class CabecalhoComponent {
-
-}
+export class CabecalhoComponent {}
